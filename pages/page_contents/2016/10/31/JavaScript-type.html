@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript-type</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+body {
+
+  font-family: Helvetica, arial, freesans, clean, sans-serif, Georgia, 
+"Times New Roman", "Microsoft YaHei", "微软雅黑", STXihei, "华文细黑", serif;
+  font-size: 1.3rem;
+  line-height: 1.6em;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 1.2rem;
+  color:#ccc;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #515151;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #515151;
+  border: 1px solid #ccc;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<blockquote>
+<h1>
+<a id="user-content-javascript-类型转换深度学习" class="anchor" href="#javascript-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JavaScript 类型转换深度学习</h1>
+</blockquote>
+
+<p><a href="./20161031.jpg" target="_blank"><img src="./20161031.jpg" alt="" style="max-width:100%;"></a>
+JavaScript 是一门弱类型语言，刚接触的时候感觉方便快捷（不需要声明变量类型了耶！），接触久了会发现它带来的麻烦有的时候不在预期之内</p>
+
+<p>呵呵一笑，哪有这么夸张，可能有人看过这样一段代码</p>
+
+<pre><code>[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]((![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+(!![]+[])[+[]]+(![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]]+([]+[])[(![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(!![]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]()[+!+[]+[!+[]+!+[]]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]+(![]+[])[+!+[]]+([][[]]+[])[+!+[]]+(+![]+[![]]+([]+[])[([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]]+(!![]+[])[!+[]+!+[]+!+[]]+([]+[])[(![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(!![]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]()[+!+[]+[!+[]+!+[]]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[!+[]+!+[]+[+[]]])()
+</code></pre>
+
+<p>这个占了好大的篇幅哈 3167 个字符，粘贴到浏览器的 Console 控制台，直接弹出了 orange，随叫随到有不有</p>
+
+<p>对于不知道原理出处的给大家一个地址：<a href="http://www.jsfuck.com/">http://www.jsfuck.com/</a></p>
+
+<p>JSFuck 的变态程度达到了极致，因为它的理念是 Write any JavaScript with 6 Characters: 
+    <a href=""></a>!+</p>
+
+<p>或许又有人说：这个只是搞怪的吧，实际谁这么写代码啊</p>
+
+<p>说的没错，当一段代码变得晦涩难懂的时候，甚至到上文的混乱字符（天书），却能实现任意功能这就变得不可预期，也就是说 JS 代码的安全性没有保障</p>
+
+<p>当然本文不会研究这些无意义的字符原理是怎么实现的因为人家的 Github 文档已经描述的特别全面了，感兴趣的可以研究下：<a href="https://github.com/aemkei/jsfuck">https://github.com/aemkei/jsfuck</a></p>
+
+<p>我们聊一聊每天能看到用到的方法底层是怎么解析的，熟知转换分成两种一种是隐式转换，另一种是强制的类型转换</p>
+
+<h3>
+<a id="user-content-隐式转换" class="anchor" href="#%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>隐式转换</h3>
+
+<p>当遇到以下几种情况，JavaScript会自动转换数据类型：</p>
+
+<ul>
+<li>不同类型的数据进行互相运算</li>
+<li>对非布尔值类型的数据求布尔值</li>
+<li>对非数值类型的数据使用一元运算符（即 “+” 和 “-“）</li>
+</ul>
+
+<h4>
+<a id="user-content-隐式转换为-boolean" class="anchor" href="#%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%E4%B8%BA-boolean" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>隐式转换为 Boolean</h4>
+
+<hr>
+
+<p>大多数在做 if 判断时会用到，这里只需记住六个转换为 false，其它全部为 true</p>
+
+<ul>
+<li>null</li>
+<li>undefined</li>
+<li>NaN</li>
+<li>‘’</li>
+<li>-0</li>
+<li>+0</li>
+</ul>
+
+<h4>
+<a id="user-content-隐式转换为-string" class="anchor" href="#%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%E4%B8%BA-string" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>隐式转换为 String</h4>
+
+<hr>
+
+<p>字符串的自动转换，主要发生在加法运算时。当一个值为字符串，另一个值为非字符串，则后者转为字符串。</p>
+
+<pre><code>'1' + 2  // '12'
+'1' + true  // "1true"
+'1' + false  // "1false"
+'1' + {}  // "1[object Object]"
+'1' + []  // "1"
+'1' + function (){}  // "1function (){}"
+'1' + undefined  // "1undefined"
+'1' + null  // "1null"
+</code></pre>
+
+<h4>
+<a id="user-content-隐式转换为-number" class="anchor" href="#%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%E4%B8%BA-number" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>隐式转换为 Number</h4>
+
+<hr>
+
+<p>除了加法运算符有可能把运算子转为字符串，其他运算符都会把两侧的运算子自动转成数值</p>
+
+<pre><code>'5' - '2'  // 3
+'5' * '2'  // 10
+true - 1  // 0
+false - 1  // -1
+'1' - 1  // 0
+'5' * []  // 0
+false / '5'  // 0
+'abc' - 1  // NaN
+ +'abc'  // NaN
+ -'abc'  // NaN
+ +true  // 1
+ -false  // 0
+</code></pre>
+
+<blockquote>
+<p>隐式转换的基础表现都在这了，强调的是这些转换的背后都伴随着强制转换，使用 Boolean、Number 和 String，下面重点讲一下强制转换的原理</p>
+</blockquote>
+
+<h3>
+<a id="user-content-强制转换" class="anchor" href="#%E5%BC%BA%E5%88%B6%E8%BD%AC%E6%8D%A2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>强制转换</h3>
+
+<p>看到上面例子也许你已经有些许疑问了，比如上面的这个 '1' + {} 怎么就输出 1[object Object] 了呢</p>
+
+<p>如上面强调的，你会猜测首先执行 String({}) 得到 "[object Object]" ，然后再字符串拼接，是的我们总能得到转换背后的实现原理，其实真实原理要比这个复杂，见下文</p>
+
+<h4>
+<a id="user-content-强制转换为-boolean" class="anchor" href="#%E5%BC%BA%E5%88%B6%E8%BD%AC%E6%8D%A2%E4%B8%BA-boolean" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>强制转换为 Boolean</h4>
+
+<hr>
+
+<p>这里略过因为与隐式转换相同，切记 []、{} 都转换成 true</p>
+
+<h4>
+<a id="user-content-强制转换为-string" class="anchor" href="#%E5%BC%BA%E5%88%B6%E8%BD%AC%E6%8D%A2%E4%B8%BA-string" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>强制转换为 String</h4>
+
+<hr>
+
+<p>基本类型的转换结果与隐式转换相同，这里说一下对象的转换，加深上面引用例子的解析</p>
+
+<p>对象转换字符串分成三步</p>
+
+<ol>
+<li>先调用toString方法，如果toString方法返回的是原始类型的值，则对该值使用String方法，不再进行以下步骤</li>
+<li>如果toString方法返回的是复合类型的值，再调用valueOf方法，如果valueOf方法返回的是原始类型的值，则对该值使用String方法，不再进行以下步骤</li>
+<li>如果valueOf方法返回的是复合类型的值，则报错</li>
+</ol>
+
+<p>再分解这个例子</p>
+
+<pre><code>String({})
+// "[object Object]"
+</code></pre>
+
+<p>上面代码相当于下面这样</p>
+
+<pre><code>String({}.toString())
+// "[object Object]"
+</code></pre>
+
+<p>如果 toString 方法和 valueOf 方法，返回的都不是原始类型的值，则 String 方法报错</p>
+
+<pre><code>var obj = {
+  valueOf: function () {
+    console.log("valueOf");
+    return {};
+  },
+  toString: function () {
+    console.log("toString");
+    return {};
+  }
+};
+
+String(obj)
+// TypeError: Cannot convert object to primitive value
+</code></pre>
+
+<p>我们不难看出可以对 toString 方法和 valueOf 方法进行改写，测试其先后运行的顺序也简单的多</p>
+
+<pre><code>String({toString:function(){return 3;}})
+// "3"
+
+String({valueOf:function (){return 2;}})
+// "[object Object]"
+
+String({valueOf:function (){return 2;},toString:function(){return 3;}})
+// "3"
+</code></pre>
+
+<p>结果表示toString方法先于valueOf方法执行</p>
+
+<h4>
+<a id="user-content-强制转换为-number" class="anchor" href="#%E5%BC%BA%E5%88%B6%E8%BD%AC%E6%8D%A2%E4%B8%BA-number" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>强制转换为 Number</h4>
+
+<hr>
+
+<p>基本类型转换如下</p>
+
+<pre><code>Number("123") // 123
+
+Number("123abc") // NaN
+
+Number("") // 0
+
+Number(false) // 0
+
+Number(undefined) // NaN
+
+Number(null) // 0
+</code></pre>
+
+<p>对象转换一样要复杂些，与 String 唯一不同的就是 valueOf 方法在前， toString 方法在后，其它不赘述见上文例子。</p>
+
+<p>isNaN() 并不陌生，isNaN({}) //true 的内在转换过程是相同的</p>
+
+<h3>
+<a id="user-content-总结" class="anchor" href="#%E6%80%BB%E7%BB%93" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>总结</h3>
+
+<p>其它的转换原则还有很多，看到这我们还是不能解释文章开始的代码转换的过程，掌握这些更多是保证正常书写代码规避错误的发生，十分好奇的可以研究下比较特殊的转化原则，还有好多好多。</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

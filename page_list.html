@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>HuaWei Shang Blog</title>
+    <!-- 导入jq -->
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./lib/js/bootstrap.min.js"></script>
+    <!-- Bootstrap -->
+    <link href="./lib/css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- 导入自己的CSS -->
+    <link rel="stylesheet" href="css/page_list.css">
+    <!-- <link rel="stylesheet" href="./css/index.css"> -->
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- 左边侧栏 -->
+        <div class="left_col hidden-xs ">
+        <!-- 顶部灰色背景div -->
+            <div class="topDiv"></div>
+            <!-- 主体容器 -->
+            <div class="intrude_less">
+            <!-- 顶部灰色背景 -->
+                <header class="left_head">
+                <!-- 头像logo -->
+                    <a class="headIcon" href="#"><img src="./images/me.jpeg" alt=""></a>
+                    <hgroup><h1><a href="#">HuaWei Shang</a></h1></hgroup>
+                    <!-- 下拉导航,分页效果 -->
+                    <!-- 下拉导航按钮 -->
+                    <div class="switch_btn">
+                    <!-- 小房子icon -->
+                        <span class="icon glyphicon glyphicon-home" id="switch_btn_icon"></span>
+                        <!-- 下拉菜单 -->
+                        <ul class="innerUl" id="innerUl">
+                            <li>菜单</li>
+                            <li>分类标签</li>
+                            <li>友情链接</li>
+                            <li>关于我</li>
+                        </ul>
+                    </div>
+                    <!-- 分页 <-->
+                    <!-- 分页容器 -->
+                    <div class="switch_page">
+                        <!-- 分页内容主体 -->
+                        <div class="switch_wrap" id="switch_wrap">
+                            <!-- 菜单部分 -->
+                            <section class="switch_menu">
+                                <!-- 网站导航 -->
+                                <nav class="nav_web">
+                                    <ul class="clearfix">
+                                        <li><a href="./index.html">主页</a></li>
+                                        <li><a href="#">搜索</a></li>
+                                        <li><a href="./page_list.html">所有文章</a></li>
+                                        <li><a href="#">标签云</a></li>
+                                        <li><a href="#">留言板</a></li>
+                                    </ul>
+                                </nav>
+                                <!-- 联系我导航 -->
+                                <nav class="nav_mail">
+                                    <ul class="clearfix">
+                                        <li><a class="sina" href="#"></a></li>
+                                        <li><a class="SF" href="#"></a></li>
+                                        <li><a class="github" href="#"></a></li>
+                                        <li><a class="webxin" href="#"></a></li>
+                                        <li><a class="mail" href="#"></a></li>
+                                    </ul>
+                                </nav>
+                            </section>
+                            <!-- 标签部分 -->
+                            <section class="switch_tab">
+                                <div>
+                                    <a href="#">Ajax</a>
+                                    <a href="#">Ajax</a>
+                                    <a href="#">Ajax</a>
+                                    <a href="#">Ajax</a>
+                                    <a href="#">Ajax</a>
+                                    <a href="#">Ajax</a>
+                                    <a href="#">Ajax</a>
+                                    <a href="#">Ajax</a>
+                                    <a href="#">Ajax</a>
+                                    <a href="#">Ajax</a>
+                                    <a href="#">Ajax</a>
+                                    <a href="#">Ajax</a>
+                                    <a href="#">Ajax</a>
+                                </div>
+                            </section>
+                            <!-- 友情链接部分 -->
+                            <section class="switch_friend">
+                                <div>
+                                    <a href="#">个人主页</a>
+                                    <a href="#">个人主页</a>
+                                    <a href="#">个人主页</a>
+                                    <a href="#">个人主页</a>
+                                </div>  
+                            </section>
+                            <!-- 关于我部分 -->
+                            <section class="switch_aboutMe">
+                                <div>前端开发,热爱各种牛逼的前端技术</div>
+                            </section>
+                        </div>
+                    </div>
+                </head>
+            </div>
+        </div>
+        <!-- 中间显示栏 -->
+        <div class="mid_col">
+            <!-- 中间导航 -->
+            <div class="mid_nav hidden-lg hidden-md hidden-sm">
+                <!-- 灰色背景Div -->
+                <div class="topDiv" id="mid_topDiv">
+                    <!-- 导航按钮 -->
+                    <div class="nav_btn"></div>
+                    <!-- 灰色背景里的名字 -->
+                    <h1><a href="#">HuaWei Shang</a></h1>
+                </div>
+                <!-- 导航栏头部 -->
+                <div class="nav_header">
+                    <!-- 头像logo -->
+                    <a class="headIcon" href="#"><img src="./images/me.jpeg" alt=""></a>
+                    <!-- 名字 -->
+                    <hgroup><h1 class='nav_h1'><a class='name_logo' href="#">HuaWei Shang</a></h1></hgroup>
+                    <!-- 导航 -->
+                    <nav class="nav_web">
+                        <ul>
+                            <li><a href="./index.html">主页</a></li>
+                            <li><a href="#">搜索</a></li>
+                            <li><a href="./page_list.html">所有文章</a></li>
+                            <li><a href="#">标签云</a></li>
+                            <li><a href="#">留言板</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="nav_mail">
+                        <ul>
+                            <li><a class="sina" href="#"></a></li>
+                            <li><a class="SF" href="#"></a></li>
+                            <li><a class="github" href="#"></a></li>
+                            <li><a class="webxin" href="#"></a></li>
+                            <li><a class="mail" href="#"></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- 中间内容容器 -->
+            <table border="1" id="list_table" ng-app='mainApp' ng-controller='mainController'>
+                <thead>
+                    <th>文章名称</th>
+                    <th>时间</th>
+                </thead>
+                <tr ng-repeat="item in dataList "></a>
+                    <td><a href={{item.address}}>{{item.title}}</a></td>
+                    <td><a href="#">{{item.timer}}</a></td>
+                </tr>
+            </table>
+        </div>
+        <!-- 占位层兼页面索引块 -->
+        <div class="zhanwei">
+            <ul class="index_ul">
+            </ul>
+        </div>
+        <!-- 自我介绍 -->
+        <div class="infoMe">
+            <div>HuaWei Shang</div>
+            <div>
+                <span>网站访问数量:</span>
+                <span>999</span>
+            </div>
+            <div>
+                <span>本页访问数量:</span>
+                <span>999</span>
+            </div>
+            <div class="mailMe">联系我:67619378@QQ.com</div>
+        </div>
+    </div>
+    <!-- 移动端最外最外层 -->
+    <div class="viewer div_hide">
+        <div class="viewer_box">
+            <!-- 左边盒子 -->
+            <div class="viewer_box_l">
+                <!-- 关于我 -->
+                <div class="aboutMe">
+                    <p>关于我</p>
+                    <p>前端开发&nbsp;,&nbsp;热爱各种牛逼的前端技术</p>
+                    <p>邮箱:67619378@QQ.com</p>
+                </div>
+                <!-- 友情链接 -->
+                <div class="friend_link">
+                    <p>友情链接</p>
+                    <a href="#">个人主页</a>
+                    <a href="#">个人主页</a>
+                    <a href="#">个人主页</a>
+                    <a href="#">个人主页</a>
+                </div>
+                <!-- 分类标签 -->
+                <div class="classTab">
+                    <p>分类标签</p>
+                    <a class="tab_a" href="#">分类标签</a>
+                    <a class="tab_a" href="#">分类标签</a>
+                    <a class="tab_a" href="#">分类标签</a>
+                    <a class="tab_a" href="#">分类标签</a>
+                    <a class="tab_a" href="#">分类标签</a>
+                    <a class="tab_a" href="#">分类标签</a>
+                    <a class="tab_a" href="#">分类标签</a>
+                    <a class="tab_a" href="#">分类标签</a>
+                    <a class="tab_a" href="#">分类标签</a>
+                    <a class="tab_a" href="#">分类标签</a>
+                    <a class="tab_a" href="#">分类标签</a>
+                </div>
+            </div>
+            <!-- 右边盒子 -->
+            <div class="viewer_box_r"></div>
+        </div>
+    </div>
+<!-- ========================================================================= -->
+    <!-- 导入腾讯大神的模板引擎js -->
+    <script type='text/JavaScript' src="js/template-native.js"></script>
+    <!-- 自定义模板 -->
+    <script type='text/template' id='template01'>
+        <!-- 中间内容容器 -->
+            <div class="modelDiv">
+                <!-- 文章div -->
+                <div class="content">
+                <!-- 文章div头部 -->
+                    <header class="mid_head">
+                    <!-- 大标题 -->
+                        <h1><a href="#"><%=title%></a></h1>
+                        <!-- 日期 -->
+                        <time class="glyphicon glyphicon-calendar hidden-xs"><%=timer%></time>
+                    </header>
+                    <div class="imgDiv">
+                        <!-- 图片 -->
+                        <p>
+                            <a href="#"><img class="img" src=<%=img%> alt=""></a>
+                        </p>
+                        <!-- 简介 -->
+                        <p class="contentText"><%=content%></p>
+                    </div>
+                    <!-- 文章div底部 -->
+                    <div class="tab_bottom">
+                    <!-- 标签 -->
+                        <a class='tab_a' href="#"><%=typeOriginal%></a><a class='tab_a' href="#"><%=type1%></a><a class='tab_a' href="#"><%=type2%></a><a class="lookAll" href=<%=address%>>查看全文&gt;&gt;</a>
+                    </div>
+                </div>
+            </div>
+    </script>
+    <!-- 引用主页js文件 -->
+   <!--  <script src="./js/index.js"></script> -->
+</body>
+<script src='./js/angular.min.js'></script>
+<!-- 引用主页js文件 -->
+<script src="./js/page_list.js"></script>
+<script src="./js/indexData.js"></script>
+</html>

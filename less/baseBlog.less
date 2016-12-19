@@ -1,0 +1,378 @@
+
+/* 媒体查询 字号 分为20份 */
+@media screen and (width:320px){
+    html{
+        font-size:320/20px;
+    }
+}
+@media screen and (width:360px){
+    html{
+        font-size:360/20px;
+    }
+}
+@media screen and (width:375px){
+    html{
+        font-size:375/20px;
+    }
+}
+@media screen and (width:414px){
+    html{
+        font-size:414/20px;
+        // font-size:20px;
+    }
+}
+@media screen and (width:412px){
+    html{
+        font-size:412/20px;
+    }
+}
+@media screen and (width:768px){
+    html{
+        font-size:768/20px;
+    }
+}
+//=========================================================================
+//bootstrap 对于宽度=768时设置有点问题,768下hidden-sm隐藏 但是ipad正好卡在768
+@media screen and (width:768px){
+    .left_col {
+        display:none;
+    }
+    .mid_nav {
+        display:block !important;
+    }
+    .container-fluid {
+        padding:0 0 0 0px;
+    }
+}
+//===============================================================
+//媒体查询当屏幕宽度小于3000,让整体容器的padding-left为300
+@media only screen and (max-width:3000px){
+    //整体容器
+    .container-fluid {
+        padding:0 0 0 300px;
+    }//中间内容容器
+    .modelDiv {
+        margin:30px;
+    }//文章div头部
+    .mid_head {
+        padding:15px 130px 15px 25px;
+    }
+}
+//媒体查询当屏幕宽度小于768,让整体容器的padding-left为0
+@media only screen and (max-width:768px){
+    .container-fluid {
+        padding:0 0 0 0px;
+    }
+    .modelDiv {
+        margin:10px;
+    }
+    .mid_head {
+        padding:15px 25px 15px 25px;
+    }
+}
+/* 去掉margin padding */
+h3,h4,h5,ul,ol,p{
+    margin: 0;
+    padding:0;  
+}
+/*清除浮动*/
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+
+a{
+    text-decoration: none;
+}
+a:hover {
+    text-decoration:none;
+}
+ul,ol{
+    list-style: none;
+}
+//=======================
+//动画序列-让元素从画面右边平移到原位
+@keyframes moveCenter {
+                0% {
+                    transform:translateX(400px);
+                }
+                100% {
+                    transform:translateX(0);
+                }
+            }
+//此项目的一些公用样式
+//body背景色
+// 页面整体容器
+.container-fluid {
+    margin:0;
+    overflow:hidden;
+    //左边栏,固定定位,这样不会跟着右边向上滚动而滚动
+    .left_col {
+        position: fixed;
+        top:0;
+        left:0;
+        float:left;
+        width: 300px;
+        height: 100%;
+        background:#fff;
+        // 顶部灰色背景
+        .topDiv {
+            width: 100%;
+            height: 180px;
+            background: #4D4D4D;
+            position: absolute;
+            z-index: -1;
+        }
+        // 主体内容容器
+        .intrude_less {
+            width:76%;
+            text-align:center;
+            margin:112px auto 0;
+            header {
+                //头像
+                .headIcon {
+                    border:5px solid white;
+                    display:block;
+                    width: 138px;
+                    height: 138px;
+                    border-radius: 50%;
+                    margin:0 auto;
+                    transition:all 4s;
+                    img {
+                        border-radius: 50%;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .headIcon:hover {
+                    transform:rotateY(360deg);
+                }
+            }
+        }
+    }
+    //中间显示栏
+    .mid_col{
+        //中间导航栏
+        .mid_nav {
+            position: relative;
+            //灰色背景div
+            .topDiv {
+                position: absolute;
+                width: 100%;
+                height:110/18rem;
+                background:#4d4d4d;
+                z-index:1;
+                //导航按钮
+                .nav_btn {
+                    width: 20/18rem;
+                    height: 20/18rem;
+                    background:url('../images/nav_btn.png') center center no-repeat;
+                    background-size:100%;
+                    position: absolute;
+                    left:5px;
+                    bottom:5px;
+                }
+                h1 {
+                    position: absolute;
+                    left: 0;
+                    bottom: 10px;
+                    margin:0;
+                    text-align:center;
+                    width: 100%;
+                    display:none;
+                    a {
+                        font-size:100%;
+                        font-family:'inherit';
+                        font-weight: 700;
+                        color:#fff;
+                    }
+                }
+            }
+            //灰色背景顶部栏固定样式
+            .topDivFixed {
+                position: fixed;
+                height: 55/18rem;
+                h1{
+                    display:block;
+                }
+            }
+            //导航框
+            .nav_header {
+                // height: 300/18rem;
+                padding-top:10/18rem;
+                background:#E9E9E9;
+                //头像
+                .headIcon {
+                    border:5/18rem solid white;
+                    display:block;
+                    width: 138/18rem;
+                    height: 138/18rem;
+                    border-radius: 50%;
+                    margin:0 auto;
+                    // transition:all 0.5s;
+                    position:relative;
+                    z-index:10;
+                    img {
+                        border-radius: 50%;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .headIcon:hover {
+                    transform:rotateY(360deg);
+                }//名字
+                hgroup {
+                    .nav_h1 {
+                        text-align:center;
+                        .name_logo {
+                            font-size:22/18rem;
+                            color:#696969;
+                            font-family:'inherit';
+                            font-weight: 700;
+                        }
+                    }
+                }
+                .nav_web {
+                    ul {
+                        overflow:hidden;
+                        width: 100%;
+                        text-align:center;
+                        margin-bottom: 10/18rem;
+                        li {
+                            display:inline-block;
+                        }
+                    }
+                }
+                .nav_mail {
+                            ul {
+                                overflow:hidden;
+                                width: 100%;
+                                margin-left: 5px;
+                                text-align:center;
+                                li {
+                                    display:inline-block;
+                                    height: 37px;
+                                    width: 37px;
+                                    margin:0 3px;
+                                    border-radius:50%;
+                                    transition:all 2s ease-in-out;
+                                    a { 
+                                        display:block;
+                                        width: 100%;
+                                        height: 100%;
+                                        color:black;
+                                        font-size:25px;
+                                        line-height: 37px;
+                                        border-radius:50%;
+                                    }
+                                    .sina {
+                                        background:#f1d188 url('../images/sinablog.png') center center no-repeat;
+                                        background-size: 85%;
+                                    }
+                                    .SF {
+                                        background:#018f56 url('../images/SegmentFault.png') center center no-repeat;
+                                        background-size:75%;
+                                    }
+                                    .github {
+                                        background:url('../images/github.png') center center no-repeat;
+                                        background-size:100%;
+                                    }
+                                    .webxin {
+                                        background:url('../images/webxin.png') center center no-repeat;
+                                        background-size:100%;
+                                    }
+                                    .mail {
+                                        background:#6fc0e4 url('../images/mail.png') center center no-repeat;
+                                        background-size:75%;
+                                    }
+                                }
+                                li:hover {
+                                    transform:scale(1.1) rotate(360deg);
+                                }
+                            }
+                        }
+            }
+        }
+        //中间内容容器
+        
+    }
+    //关于我,联系方式
+    .infoMe {
+        width:100%;
+        text-align:center;
+        padding-bottom: 20px;
+        background:#E9E9E9;
+        div {
+            padding-top:10px;
+        }
+    }   
+}
+ // 移动端最外最外层
+.viewer {
+    z-index:1000;
+    position:fixed;
+    top:0;
+    height: 0;
+    height: 5500px;
+    width: 100%;
+    overflow:hidden;
+    transition:all 0.25s ease-in-out;
+    //最外层容器
+    .viewer_box {
+        width: 100%;
+        height: 100%;
+        p {
+            color:#fff;
+            font-size:100%;
+            font-family:"微软雅黑";
+            padding:10px 0;
+
+        }
+        //左边div
+        .viewer_box_l {
+            height: 100%;
+            width: 80%;
+            background:#1e1e1e;
+            opacity:0.9;
+            float:left;
+            padding:20px;
+            .aboutMe {
+                border-bottom: 1px dotted #fff;
+            }
+            .friend_link {
+                border-bottom: 1px dotted #fff;
+            }
+            .classTab {
+                .tab_a {
+                        display:block;
+                        background:skyblue;
+                        color:white;
+                        float: left;
+                        text-align:center;
+                        margin-right:10px;
+                        margin-bottom:10px;
+                        padding:2px 5px;
+                        border-radius:5px 5px 5px 5px;
+                }
+            }
+        }
+        //右边div
+        .viewer_box_r {
+            height: 100%;
+            width: 20%;
+            float:left;
+        }
+    }
+    // 隐藏外层容器
+    &.div_hide {
+        transform:translate(-100%,0);
+    }
+}

@@ -1,0 +1,258 @@
+/* 导入 less文件 */
+@import 'normalize.less';//网站初始化css样式
+
+@import 'baseBlog.less';
+
+//===============================
+//设置一个最小高度,让页面永远显示下拉条
+body {
+    min-height: 900px;
+    background:#E9E9E9;
+}
+.container-fluid {
+    // 左边栏
+    .left_col {
+        //左边头部
+        .left_head {
+            //分类按钮
+            .switch_btn {
+                position: relative;
+                //主页小房子按钮图标
+                .icon {
+                    font-size: 25px;
+                    display: block;
+                    border-radius: 50%;
+                    background: gray;
+                    width: 38px;
+                    height: 38px;
+                    line-height: 38px;
+                    margin: 0 auto;
+                    text-align:center;  
+                }
+                // 下拉列表
+                .innerUl {
+                    z-index: 1;
+                    display:none;
+                    position: absolute;
+                    top:34px;
+                    left:67px;
+                    width: 90px;
+                    background:#000;
+                    color:white;
+                    opacity: 0.8;
+                    padding: 10px 10px;
+                    border-radius:4px;
+                    li {
+                        margin:3px 0;
+                    }
+                    li:hover {
+                        background:white;
+                        color:#000;
+                        cursor:pointer;
+                    }
+                }
+            }
+            //分页容器
+            .switch_page {
+                position: relative;
+                height: 260px;
+                overflow:hidden;
+                //分页主体
+                .switch_wrap {
+                    position: absolute;
+                    width: 400%;
+                    section {
+                        float:left;
+                        width: 228px;
+                    }
+                    //网站导航
+                    .nav_web {
+                        ul {
+                            margin:10px 0;
+                            li {
+                                height: 28px;
+                                line-height: 28px;
+                                a {
+                                    font-family: "微软雅黑"
+                                }
+                                a:hover {
+                                    font-weight: 700;
+                                }
+                            }
+                        }
+                    }
+                    //社交导航
+                    .switch_menu {
+                        .nav_mail {
+                            ul {
+                                margin-left: 5px;
+                                li {
+                                    float:left;
+                                    height: 37px;
+                                    width: 37px;
+                                    // background:green;
+                                    margin:0 3px;
+                                    border-radius:50%;
+                                    transition:all 2s ease-in-out;
+                                    a { 
+                                        display:block;
+                                        width: 100%;
+                                        height: 100%;
+                                        color:black;
+                                        font-size:25px;
+                                        line-height: 37px;
+                                        border-radius:50%;
+                                    }
+                                    .sina {
+                                        background:#f1d188 url('../images/sinablog.png') center center no-repeat;
+                                        background-size: 85%;
+                                    }
+                                    .SF {
+                                        background:#018f56 url('../images/SegmentFault.png') center center no-repeat;
+                                        background-size:75%;
+                                    }
+                                    .github {
+                                        background:url('../images/github.png') center center no-repeat;
+                                        background-size:100%;
+                                    }
+                                    .webxin {
+                                        background:url('../images/webxin.png') center center no-repeat;
+                                        background-size:100%;
+                                    }
+                                    .mail {
+                                        background:#6fc0e4 url('../images/mail.png') center center no-repeat;
+                                        background-size:75%;
+                                    }
+                                }
+                                li:hover {
+                                    transform:scale(1.1) rotate(360deg);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //中间显示栏
+    .mid_col{
+        //中间内容容器
+        .mid_div {
+          .modelDiv {
+                padding-bottom: 8px;
+                // border:1px solid red;
+                overflow:hidden;
+                background:white;
+                // 每当添加新内容div让其从画面右面移动到当前位置
+                animation:moveCenter 0.8s linear forwards;
+                .content {
+                   // 内容div头部
+                   .mid_head {
+                        position: relative;
+                        border-left: 5px solid #666;
+                       // padding:15px 130px 15px 25px;
+                       // 大标题
+                       h1 {
+                           margin:0;
+                           a {
+                               font-size:80%;
+                               font-family:'微软雅黑';
+                           }
+                       }
+                       // 日期
+                       time {
+                           position: absolute;
+                           top:20px;
+                           right: 15px;
+                           font-size:16px;
+                           color:gray;
+                       }
+                       time::before {
+                           font-size:14px;
+                           margin-right:5px;
+                           color:gray;
+                       }
+                    }
+                    .mid_head:hover {
+                       border-left: 5px solid #928f8f;
+                    }
+                   // 缩略图
+                   .imgDiv {
+                       padding:0 32px;
+                       img {
+                           //最大宽度为当前容器的宽度
+                           max-width:100%;
+                           // max-height: 350px;
+                           margin:8px 0;
+                       }
+                       // 简介
+                       .contentText {
+                           font-size:17px;
+                           font-family:'微软雅黑';
+                       }
+                   }
+                   // 底部标签
+                   .tab_bottom {
+                       margin: 20px 32px 0 32px;
+                       border-top: 1px solid gray;
+                       padding-top: 20px;
+                       .tab_a {
+                           display:block;
+                           background:skyblue;
+                           color:white;
+                           float: left;
+                           text-align:center;
+                           margin-right:10px;
+                           padding:2px 5px;
+                           border-radius:5px 5px 5px 5px;
+                       }
+                       .lookAll {
+                           float: right;
+                           display:block;
+                           width: 100px;
+                           height: 24px;
+                           background:#018f56;
+                           color:white;
+                           font:400 16px/24px "微软雅黑";
+                           text-align:center;
+                       }
+                   }
+                }
+          }
+        }
+    }
+     //占位加索引块
+    .zhanwei {
+        width: 100%;
+        height: 60px;
+        text-align:center;
+        background:#E9E9E9;
+        // 索引块UL
+        .index_ul {
+            // overflow:hidden;
+            display:inline-block;
+            width: 160px;
+            text-align:center;
+            margin-top: 15px;
+            // 索引块LI
+            li {
+                float:left;
+                width: 20px;
+                height: 20px;
+                background:#4d4d4d;
+                margin:10px;
+                display:inline-block;
+                text-align:center;
+                border-radius:50%;
+                cursor:pointer;
+                color:#fff;
+            }
+            li:hover {
+                background:#88acdb;
+            }
+            li.current {
+                background:#88acdb;
+            }
+        }
+    }
+}

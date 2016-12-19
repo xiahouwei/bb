@@ -1,0 +1,48 @@
+/* 媒体查询 字号 分为20份 */
+@media screen and (width: 320px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media screen and (width: 360px) {
+  html {
+    font-size: 1.8px;
+  }
+}
+@media screen and (width: 375px) {
+  html {
+    font-size: 18.75px;
+  }
+}
+@media screen and (width: 414px) {
+  html {
+    font-size: 20.7px;
+  }
+}
+@media screen and (width: 412px) {
+  html {
+    font-size: 20.6px;
+  }
+}
+@media screen and (width: 768px) {
+  html {
+    font-size: 38.4px;
+  }
+}
+/* 去掉margin padding */
+h3,
+h4,
+h5,
+ul,
+ol,
+p {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: none;
+}

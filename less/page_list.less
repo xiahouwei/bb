@@ -1,0 +1,140 @@
+/* 导入 less文件 */
+@import 'normalize.less';
+//网站初始化css样式
+
+@import 'baseBlog.less';
+
+//====================================================
+    // 左边栏
+.left_col {
+    //左边头部
+    .left_head {
+        //分类按钮
+        .switch_btn {
+            position: relative;
+            //主页小房子按钮图标
+            .icon {
+                    font-size: 25px;
+                    display: block;
+                    border-radius: 50%;
+                    background: gray;
+                    width: 38px;
+                    height: 38px;
+                    line-height: 38px;
+                    margin: 0 auto;
+                    text-align:center;  
+            }
+            // 下拉列表
+            .innerUl {
+                    z-index: 1;
+                    display:none;
+                    position: absolute;
+                    top:34px;
+                    left:67px;
+                    width: 90px;
+                    background:#000;
+                    color:white;
+                    opacity: 0.8;
+                    padding: 10px 10px;
+                    border-radius:4px;
+                    li {
+                        margin:3px 0;
+                    }
+                    li:hover {
+                        background:white;
+                        color:#000;
+                        cursor:pointer;
+                    }
+            }
+        }
+        //分页容器
+        .switch_page {
+            position: relative;
+            height: 260px;
+            overflow:hidden;
+            //分页主体
+            .switch_wrap {
+                position: absolute;
+                width: 400%;
+                section {
+                    float:left;
+                    width: 228px;
+                }
+                //网站导航
+                .nav_web {
+                    ul {
+                        margin:10px 0;
+                        li {
+                            height: 28px;
+                            line-height: 28px;
+                            a {
+                                font-family: "微软雅黑"
+                            }
+                            a:hover {
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                }
+                //社交导航
+                .switch_menu {
+                    .nav_mail {
+                        ul {
+                            margin-left: 5px;
+                            li {
+                                float:left;
+                                height: 37px;
+                                width: 37px;
+                                // background:green;
+                                margin:0 3px;
+                                border-radius:50%;
+                                transition:all 2s ease-in-out;
+                                a { 
+                                    display:block;
+                                    width: 100%;
+                                    height: 100%;
+                                    color:black;
+                                    font-size:25px;
+                                    line-height: 37px;
+                                    border-radius:50%;
+                                }
+                                .sina {
+                                    background:#f1d188 url('../images/sinablog.png') center center no-repeat;
+                                    background-size: 85%;
+                                }
+                                .SF {
+                                    background:#018f56 url('../images/SegmentFault.png') center center no-repeat;
+                                    background-size:75%;
+                                }
+                                .github {
+                                    background:url('../images/github.png') center center no-repeat;
+                                    background-size:100%;
+                                }
+                                .webxin {
+                                    background:url('../images/webxin.png') center center no-repeat;
+                                    background-size:100%;
+                                }
+                                .mail {
+                                    background:#6fc0e4 url('../images/mail.png') center center no-repeat;
+                                    background-size:75%;
+                                }
+                            }
+                            li:hover {
+                                transform:scale(1.1) rotate(360deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.mid_col {
+    background:#E9E9E9;
+    padding-top:20px;
+}
+//表格样式
+#list_table {
+    margin: 0 auto;
+    width: 80%;
+}
