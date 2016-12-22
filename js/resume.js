@@ -82,3 +82,33 @@ $(function(){
     $(".s01_test01").animate({left: '50px'});
     $(".s01_pic01").animate({right: '50px'});
 });
+//放个拼图
+    function jigsaw(DOM){
+        //1.插入一个10*10的div群
+        for(var i = 0;i<10;i++){
+            for(var j = 0;j<10;j++){
+                //2.在这创建div群组
+                var divs = document.createElement("div");
+                //3.给div加点样式
+                divs.style.cssText = "width:50px;height:50px;background-color:black;position:absolute;border:1px solid #fff;";
+                divs.style.backgroundImage = "url(../images/resume2.jpg)";
+                divs.style.backgroundSize = "500px";
+                //4.把他们添加到body中
+                DOM.appendChild(divs);
+                //5.让div分开
+                divs.style.left = j *50+"px";
+                divs.style.top = i *50+"px";
+                //6.给每个div对应的背景图
+                divs.style.backgroundPositionX = -j*50+"px";
+                divs.style.backgroundPositionY = -i*50+"px";
+                //7.当前没有触碰的时候背景是透明的
+                divs.style.opacity = "0";
+                //8.给每一个div增加一个鼠标移入事件
+                divs.onmouseover = function(){
+                    this.style.opacity = "1";
+                }
+            }
+        }
+    }
+    var s01_pic01 = document.getElementById("s01_pic01");
+    jigsaw(s01_pic01);
