@@ -114,14 +114,14 @@ html {
 	background: url("../images/win7_01.jpg") no-repeat center center; 
 	background-size: 100% auto; 
 }
-.s01_pic01 { position: absolute; right: -2000px; top: 80px; width: 550px; height: 550px; background:url() no-repeat left top; background-size: 96% auto; }
+.s01_pic01 { position: absolute; right: -2000px; top: 80px; width: 500px; height: 500px; background:url() no-repeat left top; background-size: 96% auto; }
 .s01_test01 { position: absolute; left: -2000px; top: 160px; width: 510px; }
 .s01_test01 b { display: block; font-size: 42px; color: skyblue; font-weight: normal; }
 .s01_test01 span { display: block; font-size: 22px; color: silver; }
 .s01_test01 p { display: block; line-height: 1.5em; text-indent: 0.2em; }
 .s01_test01 p:first-of-type { margin-top: 8px; padding-top: 8px; border-top: 1px #a6c9e2 solid; }
 .s01_test01 p:last-of-type { margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px #a6c9e2 solid; }
-.s01_t_ico01 { width: 100%; height: 40px; background:url(../images/s01_pic02.png) no-repeat center top; background-size: 98% auto; }
+.s01_t_ico01 { width: 100%; height: 40px; background:url() no-repeat center top; background-size: 98% auto; }
 
 /*屏幕二*/
 
